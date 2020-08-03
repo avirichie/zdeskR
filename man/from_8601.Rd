@@ -19,3 +19,4 @@ It takes a data-time object as a parameter and returns
 a cleaner string by stripping out unnecessary objects
 from the timestamp.
 }
+\keyword{internal}

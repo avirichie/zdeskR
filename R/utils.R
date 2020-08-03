@@ -16,6 +16,8 @@
 #' @param x Date or datetime string or object.
 #'
 #' @return Integer vector with unix time stamp.
+#'
+#' @keywords internal
 
 to_unixtime <- function (x) {
   orig <- x
@@ -47,6 +49,8 @@ to_unixtime <- function (x) {
 #'
 #' @return A datetime vector with the user's start time
 #' converted to UTC time zone.
+#'
+#' @keywords internal
 
 from_8601 <- function (x) {
   # Parse ISO-8601-formatted date strings and return POSIXlt
@@ -61,4 +65,3 @@ from_8601 <- function (x) {
   }
   return(strptime(x, pattern, tz = "UTC"))
 }
-
