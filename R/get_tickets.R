@@ -107,7 +107,7 @@ get_tickets <- function(email_id, token, subdomain, start_time = 0){
 
   pivot_data_frame <- function(c){
    pivot_df <- as.data.frame(ticket_merged$custom_fields[c])%>%
-     tidyr::pivot_wider(.data, names_from=.data$id, values_from=.data$value)
+     tidyr::pivot_wider(names_from= .data$id, values_from= .data$value)
   }
 
 
