@@ -23,8 +23,6 @@
 #'
 #' @importFrom jsonlite base64_enc
 #'
-#' @export
-#'
 #' @examples \dontrun{
 #' email_id <- "your organization's registered email id"
 #' token <- "9ffdfsqwrereflj45gklfkg"

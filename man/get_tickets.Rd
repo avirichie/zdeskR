@@ -7,18 +7,19 @@
 get_tickets(email_id, token, subdomain, start_time = 0)
 }
 \arguments{
-\item{email_id}{your Zendesk emailid}
+\item{email_id}{Zendesk Email Id (username).}
 
-\item{token}{your Zendesk API token}
+\item{token}{Zendesk API token.}
 
-\item{subdomain}{your organization's name}
+\item{subdomain}{Your organization's Zendesk sub-domain.}
 
 \item{start_time}{Date or Datetime object to get all
-tickets modified after that date.}
+tickets modified after that date. Optional - by default
+all non-archived tickets will be returned.}
 }
 \value{
 a Data Frame containing all tickets after the
-start time
+start time.
 }
 \description{
 This function takes your Email Id, authentication token,
@@ -30,13 +31,15 @@ pointer to the next page. After getting the first page
 it uses the pointer to fetch the subsequent pages.
 }
 \details{
-The start time parameter here should be in 'UTC' format as
-Zendesk uses the 'UTC' time format to export results. For eg
-"2020-07-30 20:00:00 EDT" will be "2020-08-01 00:00:00 UTC".
-So the user must do proper adjustment to the time format to
-convert the desired time from their time zone to UTC format.
-A wrong time format wont throw any error but it will not import
-accurate information.
+The start time parameter should be in 'UTC' format as
+Zendesk uses the 'UTC' time zone when retrieving tickets
+after the start time. For example, the US Eastern Time Zone
+is currently four hours being UTC. If one wanted to get tickets
+starting on August 1 at 12 am, you would need to enter
+"2020-08-01 04:00:00". The user must do proper adjustment
+to accommodate the time zone difference, if desired. A
+date can be provided, it will retrieve results as of 12 am
+in the UTC time zone.
 
 Its not a good practice to write down these authentication
 parameters in your code. There are various methods and
@@ -45,7 +48,7 @@ doesn't require you to use any one in particular.
 }
 \examples{
 \dontrun{
-allTickets <- getTickets(email_id, token, subdomain, start_time = 0)
+all_tickets <- get_tickets(email_id, token, subdomain, start_time = "2020-08-01 04:00:00")
 }
 }
 \references{

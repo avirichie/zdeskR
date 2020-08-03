@@ -2,7 +2,6 @@
 
 export(get_all_ticket_metrics)
 export(get_tickets)
-export(zendesk_auth)
 import(dplyr)
 importFrom(httr,"authenticate")
 importFrom(httr,"content")

@@ -2,25 +2,20 @@
 % Please edit documentation in R/utils.R
 \name{from_8601}
 \alias{from_8601}
-\title{This function is called from the to_unixtime() function.
-This takes a data-time object as a parameter and returns
-a cleaner string by stripping out unnecessary objects
-from the timestamp.}
+\title{Clean Date Time Inputs and Convert to UTC}
 \usage{
 from_8601(x)
 }
 \arguments{
-\item{x}{your timestamp passed from to_unixtime()
-
-Mind that the returned pattern has 'UTC' format.}
+\item{x}{Start time value provided by user.}
 }
 \value{
-a pattern/format of the timestamp to be converted
-to unix time.
+A datetime vector with the user's start time
+converted to UTC time zone.
 }
 \description{
 This function is called from the to_unixtime() function.
-This takes a data-time object as a parameter and returns
+It takes a data-time object as a parameter and returns
 a cleaner string by stripping out unnecessary objects
 from the timestamp.
 }
