@@ -44,15 +44,3 @@ zendesk_auth <- function(email_id,token,subdomain,url){
     url <- url
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-

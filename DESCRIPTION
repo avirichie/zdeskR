@@ -1,6 +1,6 @@
 Package: zdeskR
 Title: Connect to Your 'Zendesk' Data
-Version: 0.0.1.9000
+Version: 0.0.1
 Authors@R: 
     c(person(given = "Chris",
            family = "Umphlett",
@@ -12,12 +12,12 @@ Authors@R:
            email = "avinashpanigrahi@outlook.com"))
 Description: Facilitates making a connection to the 
   'Zendesk' API and executing various queries. You can use it to
-  get ticket data and metadata. The Zendesk documentation is 
+  get ticket data and ticket metrics. The Zendesk documentation is 
   available at <https://developer.zendesk.com/rest_api
   /docs/support/introduction>. This package is not supported by 
   'Zendesk' (owner of the software).
-URL: https://github.com/chrisumphlett/revulyticsR
-BugReports: https://github.com/chrisumphlett/revulyticsR/issues
+URL: https://github.com/chrisumphlett/zdeskR
+BugReports: https://github.com/chrisumphlett/zdeskR/issues
 License: CC0
 Encoding: UTF-8
 LazyData: true
