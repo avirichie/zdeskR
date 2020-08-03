@@ -11,6 +11,7 @@ The development version can be installed from GitHub: `devtools::install_github(
 The API uses Zendesk email id and the token associated with it to make queries. Once you have this parameters then we create a username and password:
 
 > username <- paste0(email_id, "/token")
+
 > password <- token
 
 This username and password will be used in every API call along with a function specific URL to fetch the data.
