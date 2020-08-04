@@ -19,4 +19,4 @@ This username and password will be used in every API call along with a function 
 The current version has several functions to make requests to the API
 
 * `get_tickets()`. Returns all the tickets of your Zendesk organization after a given start time.
-* `get_all_tickets_metrics()`. Returns all the ticket metrics in your Zendesk organization.
+* `get_all_tickets_metrics()`. Returns all the ticket metrics in your Zendesk organization. Zendesk does not have an incremental version of this API endpoint; you cannot get the data starting after a certain date as of August 2020.
