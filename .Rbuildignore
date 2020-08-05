@@ -1,2 +1,8 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+testing.R
+LICENSE.MD
+cran-comments.MD
+authentication.R
+NEWS.MD
+README.MD
