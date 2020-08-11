@@ -2,12 +2,10 @@
 
 export(get_all_ticket_metrics)
 export(get_tickets)
-export(zendesk_auth)
 import(dplyr)
 importFrom(httr,"authenticate")
 importFrom(httr,"content")
 importFrom(jsonlite,"fromJSON")
-importFrom(jsonlite,base64_enc)
 importFrom(magrittr,"%>%")
 importFrom(plyr,"rbind.fill")
 importFrom(purrr,"map_dfr")

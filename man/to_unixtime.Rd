@@ -7,16 +7,14 @@
 to_unixtime(x)
 }
 \arguments{
-\item{x}{your date time stamp}
+\item{x}{Date or datetime string or object.}
 }
 \value{
-a unix time stamp.
-
-To convert the Start time to unix time
+Integer vector with unix time stamp.
 }
 \description{
 This is a general purpose helper function for this
-package useful in converting a time stamp to unix time
+package useful in converting a time stamp to unix time.
 }
 \details{
 This function is inspired/borrowed from a github page
@@ -29,3 +27,4 @@ January 1st, 1970 at UTC. Therefore, the unix time stamp
 is merely the number of seconds between a particular date
 and the Unix Epoch.
 }
+\keyword{internal}

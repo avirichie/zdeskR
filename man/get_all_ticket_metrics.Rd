@@ -7,9 +7,9 @@
 get_all_ticket_metrics(email_id, token, subdomain)
 }
 \arguments{
-\item{email_id}{Your Zendesk Email Id.}
+\item{email_id}{Zendesk Email Id (username).}
 
-\item{token}{Your Zendesk API token.}
+\item{token}{Zendesk API token.}
 
 \item{subdomain}{Your organization's Zendesk sub-domain.}
 }
@@ -31,10 +31,7 @@ doesn't require you to use any one in particular.
 }
 \examples{
 \dontrun{
-ticket_metrics <- get_all_ticket_metrics(email_id,
-token,
-subdomain,
-start_time=0)
+ticket_metrics <- get_all_ticket_metrics(email_id, token, subdomain)
 }
 }
 \references{

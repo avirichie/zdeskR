@@ -1,7 +1,7 @@
 #' Convert a Date or Datetime Object to Unix Datetime
 #'
 #' This is a general purpose helper function for this
-#' package useful in converting a time stamp to unix time
+#' package useful in converting a time stamp to unix time.
 #'
 #' This function is inspired/borrowed from a github page
 #' by Neal Richardson who did a similar work to convert the
@@ -12,40 +12,45 @@
 #' January 1st, 1970 at UTC. Therefore, the unix time stamp
 #' is merely the number of seconds between a particular date
 #' and the Unix Epoch.
-#' @param x your date time stamp
 #'
-#' @return a unix time stamp.
+#' @param x Date or datetime string or object.
 #'
-#' To convert the Start time to unix time
+#' @return Integer vector with unix time stamp.
+#'
+#' @keywords internal
 
 to_unixtime <- function (x) {
   orig <- x
   if (is.character(x)) {
     x <- from_8601(x)
   }
-  if (inherits(x, c("POSIXt", "Date"))) {  # CHECKS if the date belongs to the POSIXt.Date class or not if yes than it converts to unix
+  # CHECKS if the date belongs to the POSIXt.Date class or not if yes than it converts to unix.
+  if (inherits(x, c("POSIXt", "Date"))) {
     x <- as.POSIXct(x)
   }
   x <- as.integer(x)
   if (is.na(x)) {
-    message("The date to be converted is not in the right format, please retry the api call with a correct parameter")
+    message("The start time is not in the right format. Fix and retry the request.")
     stop()
   }
   return(x)
 }
 
+#' Clean Date Time Inputs and Convert to UTC
+#'
 #' This function is called from the to_unixtime() function.
-#' This takes a data-time object as a parameter and returns
+#' It takes a data-time object as a parameter and returns
 #' a cleaner string by stripping out unnecessary objects
 #' from the timestamp.
 #'
-#' @return a pattern/format of the timestamp to be converted
-#' to unix time.
+#' @param x Start time value provided by user.
 #'
-#' @param x your timestamp passed from to_unixtime()
-#'
-#' Mind that the returned pattern has 'UTC' format.
 #' @importFrom stats "na.omit"
+#'
+#' @return A datetime vector with the user's start time
+#' converted to UTC time zone.
+#'
+#' @keywords internal
 
 from_8601 <- function (x) {
   # Parse ISO-8601-formatted date strings and return POSIXlt
@@ -60,4 +65,3 @@ from_8601 <- function (x) {
   }
   return(strptime(x, pattern, tz = "UTC"))
 }
-

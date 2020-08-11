@@ -15,8 +15,8 @@
 #' @references \url{https://developer.zendesk.com/rest_api
 #' /docs/support/ticket_metrics}
 #'
-#' @param email_id Your Zendesk Email Id.
-#' @param token Your Zendesk API token.
+#' @param email_id Zendesk Email Id (username).
+#' @param token Zendesk API token.
 #' @param subdomain Your organization's Zendesk sub-domain.
 #'
 #' @return Data Frame with metrics for all tickets
@@ -30,13 +30,8 @@
 #' @export
 #'
 #' @examples \dontrun{
-#' ticket_metrics <- get_all_ticket_metrics(email_id,
-#' token,
-#' subdomain,
-#' start_time=0)
+#' ticket_metrics <- get_all_ticket_metrics(email_id, token, subdomain)
 #' }
-
-
 
 get_all_ticket_metrics <-  function(email_id, token, subdomain){
 
@@ -45,7 +40,7 @@ get_all_ticket_metrics <-  function(email_id, token, subdomain){
   subdomain <- subdomain
   url_metrics <- paste0("https://", subdomain, ".zendesk.com/api/v2/ticket_metrics.json?page=")
 
-  #Stop Pagination when the parameter "next_page" is null
+  #Stop Pagination when the parameter "next_page" is null.
   req_metrics <- list()
   stop_paging <- FALSE
   i <- 1
