@@ -45,7 +45,14 @@ get_all_ticket_metrics <-  function(email_id, token, subdomain){
   stop_paging <- FALSE
   i <- 1
   while(stop_paging == FALSE){
-    req_metrics[[i]] <-  httr::GET(url = paste0(url_metrics, i), httr::authenticate(user, pwd))
+    req_metrics[[i]] <-  httr::RETRY("GET",
+                                     url = paste0(url_metrics, i), 
+                                     httr::authenticate(user, pwd),
+                                     times = 4,
+                                     pause_min = 10,
+                                     terminate_on = NULL,
+                                     terminate_on_success = TRUE,
+                                     pause_cap = 5)
     if(is.null((jsonlite::fromJSON(httr::content(req_metrics[[i]], 'text')))$next_page)){
       stop_paging <- TRUE
     }
