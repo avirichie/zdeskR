@@ -83,7 +83,13 @@ get_tickets <- function(email_id, token, subdomain, start_time = 0){
   i <- 1
   stop_paging <- FALSE
   while(stop_paging == FALSE){
-    request_ticket_cur[[i]] <- httr::GET(url = paste0(cursor_url, after_cursor), httr::authenticate(user, pwd))
+    request_ticket_cur[[i]] <- httr::RETRY('GET',
+                                           url = paste0(cursor_url, after_cursor), 
+                                           httr::authenticate(user, pwd),
+                                           times = 4,
+                                           pause_min = 10,
+                                           terminate_on = NULL,
+                                           pause_cap = 5)
     after_cursor <- (jsonlite::fromJSON(httr::content(request_ticket_cur[[i]], 'text'),flatten = TRUE))$after_cursor
     if(isTRUE((jsonlite::fromJSON(httr::content(request_ticket_cur[[i]], 'text'), flatten = TRUE))$end_of_stream)){
       stop_paging <- TRUE
