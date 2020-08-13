@@ -6,3 +6,4 @@ cran-comments.MD
 authentication.R
 NEWS.MD
 README.MD
+^CRAN-RELEASE$
