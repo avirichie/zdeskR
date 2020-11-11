@@ -20,3 +20,5 @@ The current version has several functions to make requests to the API
 
 * `get_tickets()`. Returns all the tickets of your Zendesk organization after a given start time.
 * `get_all_tickets_metrics()`. Returns all the ticket metrics in your Zendesk organization. Zendesk does not have an incremental version of this API endpoint; you cannot get the data starting after a certain date as of August 2020.
+* `get_users()`. Returns all the users registered in your Zendesk organization. 
+* `get_ticketfields()`. Returns all the system and custom fields available for the tickets in your Zendesk organization. 
