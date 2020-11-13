@@ -21,9 +21,9 @@ The current version has several functions to make requests to the API
 * `get_tickets()`. Returns all the tickets of your Zendesk organization after a given start time.
 * `get_all_tickets_metrics()`. Returns all the ticket metrics in your Zendesk organization. Zendesk does not have an incremental version of this API endpoint; you cannot get the data starting after a certain date as of August 2020.
 * `get_users()`. Returns all the users registered in your Zendesk organization. 
-* `get_ticketfields()`. Returns all the system and custom fields available for the tickets in your Zendesk organization. 
+* `get_custom_fields()`. Returns all the system and custom fields available for the tickets in your Zendesk organization. 
 
-### Using get_ticketfields() along with get_tickets()
+### Using get_custom_fields() along with get_tickets()
 get_tickets() returns a data frame that contains the names of system fields and ids of custom fields which adds up an additional task to map those ids with their respective names.
 One way to do that is to manually create a dictionary having 'id' as keys and 'names' as values, but this approach becomes cumbersome when the size of dictionary increases.
 An alternative to this approach is to use get_tickets() which returns a data frame containing system and all the custom field names. 
@@ -32,8 +32,7 @@ Here is a code snippet that you can use for reference
 ```
 # Fetch respective data frames
 tickets <- get_tickets(email_id = email_id, token = token, subdomain = subdomain, start_time = start_time)
-
-fields <- get_ticketfields(email_id = email_id,token = token,subdomain = subdomain)
+fields <- get_custom_fields(email_id = email_id,token = token,subdomain = subdomain)
 # Create a data frame that contains only 'id' and 'title' columns
 fields_reduced <- fields%>%
                     select(2,4)
