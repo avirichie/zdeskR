@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_users.R
 \name{get_users}
 \alias{get_users}
-\title{Get Metrics on All Zendesk Users.}
+\title{Returns all available zendesk users.}
 \usage{
 get_users(email_id, token, subdomain)
 }
@@ -17,14 +17,14 @@ get_users(email_id, token, subdomain)
 Data Frame with user details
 }
 \description{
-This function takes your Email Id, authentication token,
+It takes your Email Id, authentication token,
 sub-domain and parse all the users in a list.
-Since each iteration only returns 100 users at a time
-you must run the loop until the "next_page" parameter
-is equal to null.
+It iterates through all the pages returning only 100 users per
+page until the "next_page" parameter becomes null indicating
+there are no more pages to fetch.
 }
 \details{
-Its not a good practice to write down these authentication
+It's not a good practice to write down these authentication
 parameters in your code. There are various methods and
 packages available that are more secure; this package
 doesn't require you to use any one in particular.
