@@ -2,7 +2,8 @@
 % Please edit documentation in R/get_ticketfields.R
 \name{get_ticketfields}
 \alias{get_ticketfields}
-\title{Get Zendesk Ticket Fields}
+\title{Returns the system and all the custom fields defined by
+your organization's zendesk administrator}
 \usage{
 get_ticketfields(email_id, token, subdomain)
 }
@@ -14,15 +15,15 @@ get_ticketfields(email_id, token, subdomain)
 \item{subdomain}{Your organization's Zendesk sub-domain.}
 }
 \value{
-a Data Frame containing all ticket fields
+A data frame containing all ticket fields
 }
 \description{
-This function takes your Email Id, authentication token,
-sub-domain  as parameters and gets all the system and
-custom fields available for a zendesk ticket.
+It takes your Email Id, authentication token,
+sub-domain  as parameters and gets the system and all
+the custom fields available for a zendesk ticket.
 }
 \details{
-Its not a good practice to write down these authentication
+It's not a good practice to write down these authentication
 parameters in your code. There are various methods and
 packages available that are more secure; this package
 doesn't require you to use any one in particular.
