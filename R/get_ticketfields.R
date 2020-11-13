@@ -1,10 +1,11 @@
-#' Get Zendesk Ticket Fields
+#' Returns the system and all the custom fields defined by
+#' your organization's zendesk administrator
 #'
-#' This function takes your Email Id, authentication token,
-#' sub-domain  as parameters and gets all the system and
-#' custom fields available for a zendesk ticket.
+#' It takes your Email Id, authentication token,
+#' sub-domain  as parameters and gets the system and all
+#' the custom fields available for a zendesk ticket.
 #'
-#' Its not a good practice to write down these authentication
+#' It's not a good practice to write down these authentication
 #' parameters in your code. There are various methods and
 #' packages available that are more secure; this package
 #' doesn't require you to use any one in particular.
@@ -16,7 +17,7 @@
 #' @param token Zendesk API token.
 #' @param subdomain Your organization's Zendesk sub-domain.
 #'
-#' @return a Data Frame containing all ticket fields
+#' @return A data frame containing all ticket fields
 #'
 #' @import dplyr
 #' @importFrom magrittr "%>%"
