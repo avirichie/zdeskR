@@ -1,9 +1,9 @@
-## First package submission (corrected)
+## Release summary
 
-* Removed space in URL in DESCRIPTION and added single quotes around Zendesk in the Description field. Original submission notes follow
-* This is our initial submission. The package facilitates connecting to the Zendesk system API. There is another Zendesk R API package, `zendeskR`, which has several limitations. Before we started development on this package we attempted to contact the maintainer of `zendeskR` and they did not reply.
- + That package only uses "basic" authentication which we believe is less secure and may not be utilized in the future by Zendesk. We use token authentication.
- + That package has a function to retrieve all ticket data, but not to incrementally download recent tickets. An organization with many tickets would not want to have to download all of them every time. Our `get_tickets` function allows the user to only get recently modified tickets. This is a much better match with our intended workflow using the package.
+* This is a minor release that added some new functions.
+* Added `get_custom_fields()` to pull system aswell as all the custom fields defined for a zendesk organizationm.
+* Added `get_users()` to pull all the details of the users registered in an zendesk organization.
+* Improved handling API request errors.
 
 ## Test environments
 
