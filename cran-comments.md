@@ -1,7 +1,8 @@
 ## Release summary
 
 * This is a minor release that added some new functions.
-* Added `get_custom_fields()` and `get_users()` to pull all the custom fields defined for zendesk tickets and user details available all the tickets in zendesk respectively. 
+* Added `get_custom_fields()` to pull system aswell as all the custom fields defined for a zendesk organizationm.
+* Added `get_users()` to pull all the details of the users registered in an zendesk organization.
 * Improved handling API request errors.
 
 ## Test environments
